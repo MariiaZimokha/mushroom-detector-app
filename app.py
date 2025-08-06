@@ -25,7 +25,6 @@ st.write("🧬 Selected Features:")
 st.write(sample_features)
 
 
-threshold = 0.3
 
 def pred_with_model(model, features, threshold):
     prob = model.predict_proba(features)[0][1]
@@ -34,8 +33,8 @@ def pred_with_model(model, features, threshold):
 
 # Inference
 
-rf_pred, rf_prob = pred_with_model(model_forest, sample_features, threshold)
-lg_pred, lg_prob = pred_with_model(model_log, sample_features, threshold)
+rf_pred, rf_prob = pred_with_model(model_forest, sample_features, 0.3)
+lg_pred, lg_prob = pred_with_model(model_log, sample_features, 0.4)
 
 
 # Show results
